@@ -28,10 +28,10 @@ def main():
                 count_wallets_print += 1
                 console.print(
                     f"{count_wallets_print} "
-                    f"{Color.green}Адрес:{Color.yellow}{value[0]} "
-                    f"{Color.fuchsia}Всего транзакций: {Color.yellow}{value[1]['n_tx']} "
-                    f"{Color.dark}Всего получено: {Color.yellow}{Decimal(value[1]['total_received'] / 1e8):.8f} "
-                    f"{Color.green}Баланс: {Color.yellow}{value[1]['final_balance']} "
+                    f"{Color.green}Address:{Color.yellow}{value[0]} "
+                    f"{Color.fuchsia}Total transactions: {Color.yellow}{value[1]['n_tx']} "
+                    f"{Color.dark}Total received: {Color.yellow}{Decimal(value[1]['total_received'] / 1e8):.8f} "
+                    f"{Color.green}Balance: {Color.yellow}{value[1]['final_balance']} "
                 )
                 save_with_balance(value, wallets)
                 save_with_transaction(value, wallets)
@@ -43,5 +43,5 @@ if __name__ == "__main__":
     console = Console()
     url = 'https://blockchain.info/balance?active='
     file_mame = 'passwords.txt'
-    count_wallets = int(input('Количество кошельков за раз: '))
+    count_wallets = int(input('Number of addresses to be checked at one time: '))
     main()
